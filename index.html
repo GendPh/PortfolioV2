@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Gabriel Ferreira</title>
+
+  <!-- Tailwind CSS Output -->
+  <link rel="stylesheet" href="./src/tailwindcss/output.css">
+  <link rel="stylesheet" href="./src/Hamburger/hamburgers.css">
+
+</head>
+
+<body class="bg-dark text-white min-h-[200vh]">
+  <header class="sticky top-0">
+    <div class="wrapper justify-between items-center px-10 py-4 relative z-10 bg-dark">
+      <p class="font-bold text-xl">gabrielferreira</p>
+
+      <button id="toggle-navBar" class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+
+    <nav class="bg-light-dark absolute top-full left-0 right-0 z-0">
+      <ul class="grid grid-cols-2 text-center gap-4 p-4">
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Experience</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+  </main>
+  <footer></footer>
+
+  <!-- Script to toggle open -->
+  <script src="./src/Hamburger/hamburger.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+/* npx tailwindcss -i ./src/tailwindcss/tailwindcss.css -o ./src/tailwindcss/output.css --watch */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-Space-Grotesk;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply flex gap-2;
+  }
+}
