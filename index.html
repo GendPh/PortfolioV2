@@ -12,8 +12,8 @@
 
 </head>
 
-<body class="bg-dark text-white min-h-[200vh]">
-  <header class="sticky top-0">
+<body class="bg-dark text-white overflow-x-hidden">
+  <header class="sticky top-0 z-50" id="main-header">
     <div class="wrapper justify-between items-center px-10 py-4 relative z-10 bg-dark">
       <p class="font-bold text-xl">gabrielferreira</p>
 
@@ -24,8 +24,8 @@
       </button>
     </div>
 
-    <nav class="bg-light-dark absolute top-full left-0 right-0 z-0">
-      <ul class="grid grid-cols-2 text-center gap-4 p-4">
+    <nav id="main-navbar" class="absolute top-full left-0 right-0 z-0">
+      <ul class="grid grid-cols-2 text-center">
         <li><a href="#">About Me</a></li>
         <li><a href="#">Experience</a></li>
         <li><a href="#">Projects</a></li>
@@ -34,8 +34,77 @@
     </nav>
   </header>
 
-  <main>
+  <main class="px-10">
+    <section id="about-me">
+      <figure>
+        <img src="./src/assets/svg/pattern-rings.svg" alt="rings" class="rings">
+        <img src="./src/assets/svg/pattern-circle.svg" alt="rings" id="ring">
+        <img src="./src/assets/foto.jpg" alt="me foto">
+        <figcaption id="me-title">
+          Nice to meet you!<br>I'm <span>Gabriel Ferreira</span>.
+        </figcaption>
+      </figure>
+      <p id="about-description">Based in Portugal, I'm a front.end developer passionate about building accessible web
+        apps that users love.</p>
+      <div class="wrapper items-center justify-center my-6">
+        <a href="#"><img src="./src/assets/svg/icon-github.svg" alt="github svg"></a>
+        <a href="#"><img src="./src/assets/svg/icon-linkedin.svg" alt="linkedin svg"></a>
+        <a href="#"><img src="./src/assets/svg/icon-frontend-mentor.svg" alt="front-end-mentor svg"></a>
+      </div>
+      <a href="#"
+        class="border-b-2 border-light-green block mx-auto w-fit pb-2 uppercase font-bold tracking-widest">Contact
+        Me</a>
+    </section>
 
+    <section id="experience" class="relative">
+      <h2 class="mb-10">Experience</h2>
+
+      <article class="grid grid-cols-1 gap-4">
+        <div>
+          <figure class="wrapper items-center justify-center">
+            <img src="./src/assets/svg/html-5-svgrepo-com.svg" alt="HTML Icon">
+            <figcaption class="text-bold text-3xl">HTML</figcaption>
+          </figure>
+          <p class="text-light-gray capitalize text-center mt-4">2 years experience</p>
+        </div>
+        <div>
+          <figure class="wrapper items-center justify-center">
+            <img src="./src/assets/svg/css-3-svgrepo-com.svg" alt="CSS Icon">
+            <figcaption class="text-bold text-3xl">CSS</figcaption>
+          </figure>
+          <p class="text-light-gray capitalize text-center mt-4">2 years experience</p>
+        </div>
+        <div>
+          <figure class="wrapper items-center justify-center">
+            <img src="./src/assets/svg/javascript-svgrepo-com.svg" alt="Javascript Icon">
+            <figcaption class="text-bold text-3xl">JavaScript</figcaption>
+          </figure>
+          <p class="text-light-gray capitalize text-center mt-4">2 years experience</p>
+        </div>
+        <div>
+          <figure class="wrapper items-center justify-center">
+            <img src="./src/assets/svg/jquery-svgrepo-com.svg" alt="jQuery Icon" class="">
+            <figcaption class="text-bold text-3xl">jQuery</figcaption>
+          </figure>
+          <p class="text-light-gray capitalize text-center mt-4">2 years experience</p>
+        </div>
+        <div>
+          <figure class="wrapper items-center justify-center">
+            <img src="./src/assets/svg/php2-svgrepo-com.svg" alt="PHP Icon" class="">
+            <figcaption class="text-bold text-3xl">PHP</figcaption>
+          </figure>
+          <p class="text-light-gray capitalize text-center mt-4">1 years experience</p>
+        </div>
+        <div>
+          <figure class="wrapper items-center justify-center">
+            <img src="./src/assets/svg/mysql-svgrepo-com.svg" alt="PHP Icon" class="">
+            <figcaption class="text-bold text-3xl">MySql</figcaption>
+          </figure>
+          <p class="text-light-gray capitalize text-center mt-4">1 years experience</p>
+        </div>
+      </article>
+      <img src="./src/assets/svg/pattern-rings.svg" alt="rings" class="rings">
+    </section>
   </main>
   <footer></footer>
 

@@ -8,10 +8,82 @@
   * {
     @apply font-Space-Grotesk;
   }
+  section {
+    @apply pt-14 pb-20 border-b;
+  }
+  h2 {
+    @apply font-bold uppercase text-3xl text-center;
+  }
 }
 
 @layer components {
   .wrapper {
-    @apply flex gap-2;
+    @apply flex gap-4;
+  }
+  #main-navbar {
+    @apply bg-light-dark -translate-y-full transition-all duration-200 pointer-events-none;
+  }
+  #main-navbar.is-open {
+    @apply translate-y-0 pointer-events-auto;
+  }
+  #main-navbar li {
+    @apply cursor-pointer p-4 transition-all duration-200 hover:bg-light-green;
+  }
+
+  #about-me figure {
+    position: relative;
+  }
+  #about-me .rings {
+    position: absolute;
+    width: 700px;
+    height: 150px;
+    top: 5%;
+    left: -70%;
+    opacity: 70%;
+    @apply shadow-none;
+  }
+  #about-me figure #ring {
+    position: absolute;
+    width: 150px;
+    aspect-ratio: 1/1;
+    bottom: 25%;
+    right: -25%;
+    opacity: 50%;
+    @apply shadow-none;
+  }
+  #about-me figure img {
+    @apply grayscale w-52 mx-auto rounded-lg shadow-md shadow-light-gray opacity-90;
+  }
+  #me-title {
+    @apply text-4xl my-4 text-center font-bold;
+  }
+  #me-title span {
+    @apply relative;
+  }
+  #me-title span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    border-radius: 4px;
+    @apply bg-light-green;
+  }
+  #about-description {
+    @apply text-light-gray text-center text-lg;
+  }
+  #experience figure img {
+    width: 50px;
+  }
+
+  #experience .rings {
+    position: absolute;
+    width: 700px;
+    height: 150px;
+    bottom: -9%;
+    right: -70%;
+    opacity: 70%;
+    @apply shadow-none;
   }
 }
