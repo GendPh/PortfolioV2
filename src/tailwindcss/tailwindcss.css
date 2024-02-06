@@ -5,14 +5,24 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply font-Space-Grotesk;
   }
   section {
-    @apply pt-14 pb-20 border-b;
+    @apply pt-10 lg:px-32 pb-20 border-b;
+  }
+  section:last-of-type {
+    @apply border-none;
   }
   h2 {
     @apply font-bold uppercase text-3xl text-center;
+  }
+  body,
+  main {
+    overflow-x: hidden;
   }
 }
 
@@ -21,7 +31,7 @@
     @apply flex gap-4;
   }
   #main-navbar {
-    @apply bg-light-dark -translate-y-full transition-all duration-200 pointer-events-none;
+    @apply absolute top-full left-0 right-0 z-0 md:static bg-light-dark md:bg-transparent translate-y-[-100%] md:translate-y-[0] transition-all duration-200 pointer-events-none md:pointer-events-auto;
   }
   #main-navbar.is-open {
     @apply translate-y-0 pointer-events-auto;
@@ -30,32 +40,35 @@
     @apply cursor-pointer p-4 transition-all duration-200 hover:bg-light-green;
   }
 
+  #about-me,
   #about-me figure {
     position: relative;
   }
   #about-me .rings {
+    pointer-events: none;
     position: absolute;
     width: 700px;
     height: 150px;
-    top: 5%;
     left: -70%;
+    top: 2%;
     opacity: 70%;
-    @apply shadow-none;
+    @apply shadow-none md:top-[-5%] lg:left-[-30%] lg:top-[5%];
   }
-  #about-me figure #ring {
+  #about-me #ring {
+    pointer-events: none;
     position: absolute;
     width: 150px;
     aspect-ratio: 1/1;
-    bottom: 25%;
-    right: -25%;
+    bottom: -25%;
+    right: -45%;
     opacity: 50%;
-    @apply shadow-none;
+    @apply shadow-none md:right-[-50%] md:bottom-[-10%] z-20 lg:right-[80%] lg:bottom-[10%];
   }
-  #about-me figure img {
-    @apply grayscale w-52 mx-auto rounded-lg shadow-md shadow-light-gray opacity-90;
+  #about-me figure img:last-of-type {
+    @apply object-cover grayscale w-52 h-full md:w-[550px] mx-auto rounded-lg shadow-md shadow-light-gray opacity-80;
   }
   #me-title {
-    @apply text-4xl my-4 text-center font-bold;
+    @apply text-3xl md:text-4xl lg:text-6xl my-4 text-center md:text-start font-bold;
   }
   #me-title span {
     @apply relative;
@@ -71,19 +84,35 @@
     @apply bg-light-green;
   }
   #about-description {
-    @apply text-light-gray text-center text-lg;
+    @apply text-light-gray text-center md:text-start text-lg md:text-xl lg:pr-64;
   }
+
+  #experience {
+    @apply lg:border-none;
+  }
+
   #experience figure img {
     width: 50px;
   }
 
   #experience .rings {
+    pointer-events: none;
     position: absolute;
     width: 700px;
     height: 150px;
     bottom: -9%;
     right: -70%;
     opacity: 70%;
-    @apply shadow-none;
+    @apply shadow-none md:bottom-[-15%] lg:right-[-30%];
+  }
+  form .rings {
+    pointer-events: none;
+    position: absolute;
+    width: 700px;
+    height: 100px;
+    bottom: -9%;
+    right: 60%;
+    opacity: 70%;
+    @apply shadow-none md:right-[80%] lg:right-[150%];
   }
 }
