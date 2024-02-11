@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./src/tailwindcss/output.css">
   <!-- Hamburger Buttons CSS -->
   <link rel="stylesheet" href="./src/Hamburger/hamburgers.css">
-
+  <link rel="stylesheet" href="./src/Loader/loader.css">
 </head>
 
 <body class="bg-dark text-white">
@@ -55,8 +55,7 @@
             <a href="#"><img class="md:w-12" src="./src/assets/svg/icon-frontend-mentor.svg"
                 alt="front-end-mentor svg"></a>
           </div>
-          <a href="#"
-            class="border-b-2 border-light-green block mx-auto w-fit pb-2 uppercase font-bold tracking-widest">Contact
+          <a href="#" class="block mx-auto button">Contact
             Me</a>
         </div>
       </div>
@@ -115,74 +114,24 @@
     <section id="projects" class="pt-20">
       <div class="wrapper justify-between mb-10">
         <h2>Projects</h2>
-        <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">Contact
+        <a href="#" class="button">Contact
           Me</a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <article class="uppercase font-bold">
           <figure class="mb-4">
-            <img src="./src/assets/Projects/thumbnail-project-1-large.webp" alt="project first" class="mb-4">
-            <figcaption class="text-2xl">Design Portfolio</figcaption>
+            <img src="./src/assets/Projects/thumbnail-project-7-large.jpg" alt="project first" class="mb-4">
+            <figcaption class="text-2xl">Yu-Gi-Oh Cards</figcaption>
           </figure>
           <div class="wrapper mb-4 text-light-gray text-xl">
             <p>HTML</p>
             <p>CSS</p>
+            <p>JavaScript</p>
           </div>
           <div class="wrapper items-center">
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
-              Project</a>
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
-              Code</a>
-          </div>
-        </article>
-        <article class="uppercase font-bold">
-          <figure class="mb-4">
-            <img src="./src/assets/Projects/thumbnail-project-2-large.webp" alt="project first" class="mb-4">
-            <figcaption class="text-2xl">E-Learning Landing Page</figcaption>
-          </figure>
-          <div class="wrapper mb-4 text-light-gray text-xl">
-            <p>HTML</p>
-            <p>CSS</p>
-          </div>
-          <div class="wrapper items-center">
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
-              Project</a>
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
-              Code</a>
-          </div>
-        </article>
-        <article class="uppercase font-bold">
-          <figure class="mb-4">
-            <img src="./src/assets/Projects/thumbnail-project-3-large.webp" alt="project first" class="mb-4">
-            <figcaption class="text-2xl">todo web app</figcaption>
-          </figure>
-          <div class="wrapper mb-4 text-light-gray text-xl">
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>Javascript</p>
-          </div>
-          <div class="wrapper items-center">
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
-              Project</a>
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
-              Code</a>
-          </div>
-        </article>
-        <article class="uppercase font-bold">
-          <figure class="mb-4">
-            <img src="./src/assets/Projects/thumbnail-project-4-large.webp" alt="project first" class="mb-4">
-            <figcaption class="text-2xl">entertainment web app</figcaption>
-          </figure>
-          <div class="wrapper mb-4 text-light-gray text-xl">
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>Javascript</p>
-          </div>
-          <div class="wrapper items-center">
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
-              Project</a>
-            <a href="#" class="border-b-2 border-light-green pb-2 uppercase font-bold tracking-widest">View
+            <a href="https://github.com/GendPh/API-YU-GI-OH-PRODECK" target="_blank" rel="noopener noreferrer"
+              class="button">View
               Code</a>
           </div>
         </article>
@@ -204,16 +153,22 @@
           as soon as possible.</p>
       </div>
 
-      <form action="" method="post" class="py-6 relative lg:max-w-2xl">
+      <form method="post" class="py-6 relative lg:max-w-2xl" id="mail-form">
         <img src="./src/assets/svg/pattern-rings.svg" alt="rings" class="rings">
-        <input type="text" name="client_name" id="client_name" placeholder="NAME"
+
+        <input required type="text" name="client_name" id="client_name" placeholder="NAME"
           class="bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none">
-        <input type="email" name="client_email" id="client_email" placeholder="EMAIL"
+
+        <input required type="email" name="client_email" id="client_email" placeholder="EMAIL"
           class="bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none">
-        <textarea name="client_message" id="client_message" cols="30" rows="2" placeholder="MESSAGE"
+
+        <textarea name="client_message" required minlength="25" value="teste" id="client_message" cols="30" rows="2"
+          placeholder="MESSAGE"
           class="bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none"></textarea>
-        <input type="submit" value="Send Message"
-          class="border-b rounded-none border-light-green block ml-auto w-fit pb-2 uppercase font-bold tracking-widest">
+        <button type="submit" class="flex items-center justify-center ml-auto button">
+          <span class="loader hidden"></span>
+          <span class="text">Send Message</span>
+        </button>
       </form>
     </div>
 
@@ -228,11 +183,17 @@
     <p class="text-center text-xl">&copy; <span class="text-dark-green text-bold" id="year">2024</span> Gabriel | All
       rights
       reserved.</p>
-
   </footer>
 
   <!-- Script to toggle open the navbar -->
   <script src="./src/Hamburger/hamburger.js"></script>
+
+  <!-- Script To Control Email Config | Start | -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script src="./EmailConfig/SendEmail.js"></script>
+  <!-- Script To Control Email Config | End | -->
+
   <!-- Script to give the footer span#year the updated year -->
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>

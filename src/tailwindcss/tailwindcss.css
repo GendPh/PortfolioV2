@@ -95,6 +95,22 @@
     width: 50px;
   }
 
+  .button {
+    @apply relative border-b-2 border-light-green p-2 uppercase font-bold tracking-widest rounded-t-lg;
+  }
+  .button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    @apply bg-light-green -z-10 transition-all duration-300 rounded-t-md;
+  }
+  .button:hover::after {
+    width: 100%;
+  }
+
   #experience .rings {
     pointer-events: none;
     position: absolute;
@@ -114,5 +130,11 @@
     right: 60%;
     opacity: 70%;
     @apply shadow-none md:right-[80%] lg:right-[150%];
+  }
+  .hide-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Adjust this if you want a specific width */
   }
 }
