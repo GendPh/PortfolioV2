@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords"
+    content="top rated movies, best films, critically acclaimed, audience favorites, movie ratings, film reviews, cinematic excellence">
+  <meta name="description"
+    content="Discover the highest-rated movies of all time. Explore a curated list of top-rated films based on audience and critic reviews. Find cinematic gems that have earned acclaim for their exceptional storytelling and performances.">
+  <meta name="author" content="Gabriel e Telmo">
+
+  <title>Application Movies - Top Rated</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../src/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../src/assets/Svg/favicon.svg">
+  <link rel="icon" type="image/png" href="../src/assets/Svg/favicon.png">
+</head>
+
+<body>
+
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a href="../index.html" class="nav-link">
+          <figure class="mb-0 d-flex align-items-center gap-2 text-white">
+            <img src="../src/assets/Svg/FluentMoviesAndTv16Regular.svg" alt="Svg Movie Banner">
+            <figcaption class="me-4">
+              Movie Application
+            </figcaption>
+          </figure>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navBar"
+          aria-controls="main-navBar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navBar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#popular">Popular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active disabled" href="#">Top Rated</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#playing">Now Playing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#upcoming">Upcoming</a>
+            </li>
+          </ul>
+
+          <form class="d-flex" role="search" action="" id="searchForm" data-url-destination="../Search/search.html">
+            <input id="searchFilm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success text-white" type="submit">Search</button>
+            <!-- Modal -->
+
+            <div class="modal text-white fade" id="searchError" tabindex="-1" aria-labelledby="searchError"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close closeModal" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary closeModal" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div id="movie-container"></div>
+      <div id="btn-container" data-max-btn="0"></div>
+    </section>
+  </main>
+
+  <footer class="py-3 bg-dark" data-bs-theme="dark">
+    <ul class="nav text-wh justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#popular">Popular</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#top-rated">Top Rated</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#playing">Now Playing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#upcoming">Upcoming</a>
+      </li>
+    </ul>
+    <p class="text-center text-muted">© <span id="year"></span> Gabriel Telmo</p>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="../Search/searchMovie.js" type="module"></script>
+  <script src="../src/goPage.js" type="module"></script>
+</body>
+
+</html>

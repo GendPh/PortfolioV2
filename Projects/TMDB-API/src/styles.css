@@ -1,0 +1,108 @@
+html {
+  scroll-padding-top: 4rem;
+}
+body {
+  background-color: #333;
+}
+main {
+  width: min(100%, 950px);
+  margin: 1rem auto;
+}
+
+#movie-container {
+  padding: 1rem;
+  min-height: 100vh;
+  color: white;
+}
+
+#movie-container:not(.fail) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media screen and (min-width: 760px) {
+  #movie-container:not(.fail) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1000px) {
+  #movie-container:not(.fail) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+#btn-container {
+  display: flex;
+  overflow-x: scroll;
+  gap: 0.5rem;
+  margin: 1rem;
+  padding-bottom: 1rem;
+}
+
+#btn-container::-webkit-scrollbar {
+  height: 10px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+#btn-container::-webkit-scrollbar-thumb {
+  background-color: #fff; /* Set the color of the thumb (the draggable part of the scrollbar) */
+  border-radius: 2rem; /* Round the corners of the thumb */
+}
+
+#btn-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the color of the track (the area behind the thumb) */
+  border-radius: 2rem; /* Round the corners of the track */
+}
+
+#fail-search {
+  width: min(100%, 150px);
+}
+
+.loader {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 15px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -24px 0 #fff, 24px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #fff;
+    box-shadow: -24px 0 #333, 24px 0 #fff;
+  }
+  66% {
+    background: #333;
+    box-shadow: -24px 0 #fff, 24px 0 #fff;
+  }
+  100% {
+    background: #fff;
+    box-shadow: -24px 0 #fff, 24px 0 #333;
+  }
+}
+
+.average {
+  font-size: 0.7rem;
+  background-color: #23a2b7;
+  padding: 0.1rem 0.3rem;
+  border-radius: 5px;
+  color: white;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Adjust this if you want a specific width */
+}
+
+.card {
+  height: max-content;
+}

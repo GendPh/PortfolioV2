@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Gabriel e Telmo">
+  <meta name="description"
+    content="Explore details about a specific movie and discover similar films on our platform. Dive into the plot, cast, and reviews of the featured movie. Find recommendations for movies with similar themes, genres, and audience appeal.">
+  <meta name="keywords"
+    content="specific movie details, movie information, similar movies, movie recommendations, related films, movie exploration, cast and crew, audience reviews, cinematic experience, film suggestions">
+
+  <title>Movie Application - Movie</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../src/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../src/assets/Svg/favicon.svg">
+  <link rel="icon" type="image/png" href="../src/assets/Svg/favicon.png">
+
+</head>
+
+<body>
+
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a href="../index.html" class="nav-link">
+          <figure class="mb-0 d-flex align-items-center gap-2 text-white">
+            <img src="../src/assets/Svg/FluentMoviesAndTv16Regular.svg" alt="Svg Movie Banner">
+            <figcaption class="me-4">
+              Movie Application
+            </figcaption>
+          </figure>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navBar"
+          aria-controls="main-navBar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navBar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#popular">Popular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#top-rated">Top Rated</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#playing">Now Playing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#upcoming">Upcoming</a>
+            </li>
+          </ul>
+
+          <form class="d-flex" role="search" action="" id="searchForm" data-url-destination="../Search/search.html">
+            <input id="searchFilm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success text-white" type="submit">Search</button>
+            <!-- Modal -->
+
+            <div class="modal text-white fade" id="searchError" tabindex="-1" aria-labelledby="searchError"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Error Message</h5>
+                    <button type="button" class="btn-close closeModal" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Please insert a movie name.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary closeModal" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="text-white">
+    <section class="p-2">
+      <img src="" alt="Img" id="backdroup-img" class="w-100 rounded-2">
+      <a href="#" id="watch-now" class="btn btn-danger w-100 my-2" target="_blank">Watch Now</a>
+
+      <div class="d-flex align-items-center justify-content-between justify-content-md-around gap-2 flex-wrap my-2">
+        <h1 id="movie-title">Title</h1>
+        <p class="btn btn-warning">IMBD: <span id="imbd-vote"></span></p>
+      </div>
+
+      <div class="d-grid">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p id="description">description</p>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="mb-0 fw-bold">Released date: <span class="fw-normal" id="release-date">22</span></p>
+            <p class="mb-0 fw-bold">Genre: <span class="fw-normal" id="genre">1</span></p>
+            <p class="mb-0 fw-bold">Duration: <span class="fw-normal" id="duration">0</span>min</p>
+            <p class="mb-0 fw-bold">Country: <span class="fw-normal" id="country">PT</span></p>
+            <p class="mb-0 fw-bold">Companies: <span class="fw-normal" id="companies">1</span></p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="p-2">
+      <h2>You may also like</h2>
+
+      <div id="movie-container">
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-3 bg-dark" data-bs-theme="dark">
+    <ul class="nav text-wh justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#popular">Popular</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#top-rated">Top Rated</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#playing">Now Playing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="../index.html#upcoming">Upcoming</a>
+      </li>
+    </ul>
+    <p class="text-center text-muted">© <span id="year"></span> Gabriel Telmo</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script type="module" src="../Search/searchMovie.js"></script>
+  <script type="module" src="./fetchMovie.js"></script>
+</body>
+
+</html>

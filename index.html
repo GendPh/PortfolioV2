@@ -118,7 +118,24 @@
           Me</a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <article class="uppercase font-bold">
+          <figure class="mb-4">
+            <img src="./src/assets/Projects/thumbnail-project-9-large.jpg" alt="project first" class="mb-4">
+            <figcaption class="text-2xl">TMDB Movie API</figcaption>
+          </figure>
+          <div class="wrapper mb-4 text-light-gray text-xl">
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+          </div>
+          <div class="wrapper items-center">
+            <a href="./Projects/TMDB-API/index.html" target="_blank" rel="noopener noreferrer" class="button">View
+              Project</a>
+            <a href="https://github.com/GendPh/Movie-TMDB" target="_blank" rel="noopener noreferrer" class="button">View
+              Code</a>
+          </div>
+        </article>
         <article class="uppercase font-bold">
           <figure class="mb-4">
             <img src="./src/assets/Projects/thumbnail-project-7-large.jpg" alt="project first" class="mb-4">
@@ -131,6 +148,22 @@
           </div>
           <div class="wrapper items-center">
             <a href="https://github.com/GendPh/API-YU-GI-OH-PRODECK" target="_blank" rel="noopener noreferrer"
+              class="button">View
+              Code</a>
+          </div>
+        </article>
+        <article class="uppercase font-bold">
+          <figure class="mb-4">
+            <img src="./src/assets/Projects/thumbnail-project-8-large.jpg" alt="project first" class="mb-4">
+            <figcaption class="text-2xl">Age Calculator</figcaption>
+          </figure>
+          <div class="wrapper mb-4 text-light-gray text-xl">
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+          </div>
+          <div class="wrapper items-center">
+            <a href="https://github.com/GendPh/Age-Calculator-App" target="_blank" rel="noopener noreferrer"
               class="button">View
               Code</a>
           </div>
@@ -157,14 +190,14 @@
         <img src="./src/assets/svg/pattern-rings.svg" alt="rings" class="rings">
 
         <input required type="text" name="client_name" id="client_name" placeholder="NAME"
-          class="bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none">
+          class="bg-transparent focus:bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none">
 
         <input required type="email" name="client_email" id="client_email" placeholder="EMAIL"
-          class="bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none">
+          class="bg-transparent focus:bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none">
 
         <textarea name="client_message" required minlength="25" value="teste" id="client_message" cols="30" rows="2"
           placeholder="MESSAGE"
-          class="bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none"></textarea>
+          class="bg-transparent focus:bg-transparent border-b rounded-none w-full indent-6 py-2 text-xl mb-4 outline-none"></textarea>
         <button type="submit" class="flex items-center justify-center ml-auto button">
           <span class="loader hidden"></span>
           <span class="text">Send Message</span>
@@ -194,8 +227,15 @@
   <script src="./EmailConfig/SendEmail.js"></script>
   <!-- Script To Control Email Config | End | -->
 
-  <!-- Script to give the footer span#year the updated year -->
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <!-- Script to give the footer span#year the updated year and remove the url index.html-->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    if (window.location.pathname.endsWith('index.html')) {
+      const newUrl = window.location.href.replace('index.html', '');
+      window.location.replace(newUrl);
+    }
+  </script>
 </body>
 
 </html>
