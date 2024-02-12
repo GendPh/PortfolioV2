@@ -4,6 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Gabriel Ferreira's portfolio showcasing experience, projects, and contact information.">
+  <meta name="keywords" content="Gabriel Ferreira, portfolio, experience, projects, contact, school">
+  <meta name="author" content="Gabriel Ferreira">
+
   <title>Portfolio - Gabriel Ferreira</title>
 
   <!-- Tailwind CSS Output -->
@@ -28,9 +33,9 @@
     <nav id="main-navbar" class="md:pr-10">
       <ul class="grid grid-cols-2 md:grid-cols-4 text-center">
         <li><a href="#">About Me</a></li>
-        <li><a href="#">Experience</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact Me</a></li>
       </ul>
     </nav>
 
@@ -39,7 +44,8 @@
   <main class="px-10">
     <section id="about-me" class="wrapper flex-col md:flex-row-reverse">
       <img src="./src/assets/svg/pattern-rings.svg" alt="rings" class="rings">
-      <figure>
+      <figure
+        class="border-dark-green border-b-4 md:border-b-0 md:border-l-4 w-52 md:w-[550px] mx-auto shadow-lg shadow-light-dark">
         <img src="./src/assets/svg/pattern-circle.svg" alt="rings" id="ring">
         <img src="./src/assets/foto.jpg" alt="me foto">
       </figure>
@@ -48,14 +54,14 @@
         <p id="about-description" class="md:my-10">Based in Portugal, I'm a frontend developer passionate about
           building accessible web
           apps that users love.</p>
-        <div class="wrapper flex-col md:flex-row items-center">
+        <div class="wrapper flex-col items-center md:items-start">
           <div class="wrapper items-center justify-center my-6">
             <a href="#"><img class="md:w-12" src="./src/assets/svg/icon-github.svg" alt="github svg"></a>
             <a href="#"><img class="md:w-12" src="./src/assets/svg/icon-linkedin.svg" alt="linkedin svg"></a>
             <a href="#"><img class="md:w-12" src="./src/assets/svg/icon-frontend-mentor.svg"
                 alt="front-end-mentor svg"></a>
           </div>
-          <a href="#" class="block mx-auto button">Contact
+          <a href="#contact" class="button">Contact
             Me</a>
         </div>
       </div>
@@ -114,14 +120,15 @@
     <section id="projects" class="pt-20">
       <div class="wrapper justify-between mb-10">
         <h2>Projects</h2>
-        <a href="#" class="button">Contact
+        <a href="#contact" class="button">Contact
           Me</a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <article class="uppercase font-bold">
-          <figure class="mb-4">
-            <img src="./src/assets/Projects/thumbnail-project-9-large.jpg" alt="project first" class="mb-4">
+          <figure>
+            <img src="./src/assets/Projects/thumbnail-project-9-large.jpg" alt="project first"
+              class="mb-4 border-b-2 border-light-green">
             <figcaption class="text-2xl">TMDB Movie API</figcaption>
           </figure>
           <div class="wrapper mb-4 text-light-gray text-xl">
@@ -137,8 +144,9 @@
           </div>
         </article>
         <article class="uppercase font-bold">
-          <figure class="mb-4">
-            <img src="./src/assets/Projects/thumbnail-project-7-large.jpg" alt="project first" class="mb-4">
+          <figure>
+            <img src="./src/assets/Projects/thumbnail-project-7-large.jpg" alt="project first"
+              class="mb-4 border-b-2 border-light-green">
             <figcaption class="text-2xl">Yu-Gi-Oh Cards</figcaption>
           </figure>
           <div class="wrapper mb-4 text-light-gray text-xl">
@@ -153,8 +161,9 @@
           </div>
         </article>
         <article class="uppercase font-bold">
-          <figure class="mb-4">
-            <img src="./src/assets/Projects/thumbnail-project-8-large.jpg" alt="project first" class="mb-4">
+          <figure>
+            <img src="./src/assets/Projects/thumbnail-project-8-large.jpg" alt="project first"
+              class="mb-4 border-b-2 border-light-green">
             <figcaption class="text-2xl">Age Calculator</figcaption>
           </figure>
           <div class="wrapper mb-4 text-light-gray text-xl">
@@ -172,9 +181,8 @@
     </section>
   </main>
 
-  <footer class="px-10 lg:px-32 py-14 bg-light-dark">
-    <div id="contact"
-      class="pb-10 max-w-xl lg:max-w-full mx-auto wrapper flex-col lg:flex-row justify-between lg:gap-10">
+  <footer class="px-10 lg:px-32 py-14 bg-light-dark" id="contact">
+    <div class="pb-10 max-w-xl lg:max-w-full mx-auto wrapper flex-col lg:flex-row justify-between lg:gap-10">
       <div>
         <h2 class="capitalize lg:text-start">Contact</h2>
         <p class="text-center lg:text-start lg:block lg:max-w-lg text-light-gray text-sm lg:text-xl mt-4">I would love
