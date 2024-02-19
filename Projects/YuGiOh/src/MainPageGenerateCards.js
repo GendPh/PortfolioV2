@@ -28,7 +28,7 @@ async function LoadCardList(container, url, sliced, shuffle, ban_list) {
   }
 
   // Load cards into the container
-  LoadCards(container, result, ban_list);
+  LoadCards(container, result, ban_list, "");
 }
 
 // Function to load the newest card list

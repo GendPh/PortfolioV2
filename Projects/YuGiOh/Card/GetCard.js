@@ -30,7 +30,7 @@ async function LoadCardInfo() {
 
     // Updating DOM elements with card information
     DOMElem.title.textContent = result.name;
-    DOMElem.card_img.innerHTML = CardElement(result);
+    DOMElem.card_img.innerHTML = CardElement(result, "../src");
     DOMElem.card_type.innerHTML = `<span class="text-accent font-bold">Type:</span> ${result.type}`;
     DOMElem.card_race.innerHTML = `<span class="text-accent font-bold">Race:</span> ${result.race}`;
     DOMElem.card_desc.textContent = result.desc;
@@ -49,7 +49,7 @@ async function LoadCardInfo() {
     }
 
     // Fetching and displaying related cards
-    let related_cards = await FetchApi(URL + `?archetype=${(result.archetype)?result.archetype:"blue-eyes"}`);
+    let related_cards = await FetchApi(URL + `?archetype=${(result.archetype) ? result.archetype : "blue-eyes"}`);
     if (!related_cards.error) {
       // Filtering out the current card from related cards
       related_cards = related_cards.data.filter(obj => obj.name !== result.name);

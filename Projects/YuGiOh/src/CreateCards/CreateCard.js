@@ -1,6 +1,6 @@
-export function CardElement(card) {
-  const imageSrc = `/src/Assets/card/${card.id}.jpg`;
-  const fallbackImageSrc = '/src/Assets/card/cardBack.jpg';
+export function CardElement(card, path) {
+  const imageSrc = `${path}src/Assets/card/${card.id}.jpg`;
+  const fallbackImageSrc = `${path}/Assets/card/cardBack.jpg`;
 
   // Create an Image object to check if the image exists
   const img = new Image();
@@ -18,9 +18,7 @@ export function CardElement(card) {
   return `<img src="${imageSrc}" alt="${card.name}" >`;
 }
 
-
-
-function CreateLinkCard(container, card, ban_list) {
+function CreateLinkCard(container, card, ban_list, path) {
   let ban_list_type;
   if (ban_list === "tcg") {
     ban_list_type = card.banlist_info?.ban_tcg || "not-ban";
@@ -30,13 +28,13 @@ function CreateLinkCard(container, card, ban_list) {
 
   const a_el = document.createElement("a");
   a_el.title = card.name;
-  a_el.href = `/Card/card.html?card=${card.id}`
+  a_el.href = `${path}/Card/card.html?card=${card.id}`
   a_el.classList.add(ban_list_type);
-  a_el.innerHTML = CardElement(card);
+  a_el.innerHTML = CardElement(card, path);
   container.appendChild(a_el);
 }
 
-export function LoadCards(container, data, ban_list) {
+export function LoadCards(container, data, ban_list, path) {
   const loader = container.querySelector(".loader-container");
   const error_message = container.querySelector(".error-message");
   loader.classList.add("hidden");
@@ -46,7 +44,7 @@ export function LoadCards(container, data, ban_list) {
     error_message.textContent = data.error;
   } else {
     data.forEach(card => {
-      CreateLinkCard(container, card, ban_list);
+      CreateLinkCard(container, card, ban_list, path);
     });
     const cards_el = container.querySelectorAll(".card-container a");
     const gsap_duration = 0.15;
