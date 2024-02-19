@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../src/Hamburguer/dist/hamburgers.min.css">
+  <link rel="stylesheet" href="../src/TailwindCss/output.css">
+  <title>Card </title>
+</head>
+
+<body class="bg-background text-text">
+
+  <header
+    class="sticky max-w-5xl mx-auto overflow-x-hidden top-0 text-text uppercase wrapper items-center justify-between z-50 bg-background px-10 py-2">
+    <!-- Logo -->
+    <figure class="wrapper items-center">
+      <a href="../index.html">
+        <img src="../src/Assets/logo.jpg" alt="Yu Gi Oh Logo" class="w-20">
+      </a>
+    </figure>
+
+    <!-- Hamburger menu button -->
+    <button id="button-navbar-open" class="hamburger hamburger--3dx-r lg:hidden">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <!-- Main navigation -->
+    <nav id="main-navbar">
+      <!-- Close button for mobile -->
+      <button id="button-navbar-close" class="hamburger is-active hamburger--3dx-r lg:hidden">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#all-cards" class="selected">All Cards</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="px-10">
+    <section id="search-card">
+      <form id="searchForm" method="post">
+        <input type="search" id="searchInput" name="search" placeholder="Enter your search term..."
+          class="bg-transparent w-full border border-accent rounded-md text-lg indent-5 p-3">
+        <button type="submit" class="bg-secondary rounded-md block mx-auto p-5 w-[70%] mt-10">Search</button>
+      </form>
+      <article
+        class="card-container bg-secondary overflow-y-scroll max-h-80 hidden grid-cols-3 md:grid-cols-5 mt-5 lg:grid-cols-7 min-h-0 p-5"
+        id="card-search">
+        <!-- Loader for loading state -->
+        <div class="loader-container col-span-3 md:col-span-5 lg:col-span-10">
+          <span class="loader"></span>
+        </div>
+      </article>
+    </section>
+    <section class="border-b-0">
+      <h1 class="text-4xl text-center">All Cards</h1>
+      <div id="filters" class="my-10">
+        <div id="page-buttons" class="overflow-x-scroll wrapper items-center bg-transparent pb-5">
+        </div>
+        <div class="wrapper items-center justify-between flex-wrap mt-10">
+          <form method="post">
+            <!-- Select element (dropdown) -->
+            <select id="archetype_select" name="archetype_select" class="bg-transparent">
+              <option value="" disabled selected>Choose a Archetype:</option>
+              <option value="">Clear</option>
+            </select>
+          </form>
+          <form method="post">
+            <!-- Select element (dropdown) -->
+            <select id="type_select" name="type_select" class="bg-transparent">
+              <option value="" disabled selected>Choose a Type:</option>
+              <option value="">Clear</option>
+            </select>
+          </form>
+          <form method="post">
+            <!-- Select element (dropdown) -->
+            <select id="race_select" name="race_select" class="bg-transparent">
+              <option value="" disabled selected>Choose a Race:</option>
+              <option value="">Clear</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <article class="card-container grid-cols-3 md:grid-cols-5 lg:grid-cols-7 min-h-0" id="all-cards">
+        <!-- Error message for failed data retrieval -->
+        <p class="error-message hidden">We're sorry, but we encountered an
+          issue
+          while trying to retrieve the
+          requested data. Please try again later. If the problem persists, feel free to contact our support team for
+          assistance.
+        </p>
+        <!-- Loader for loading state -->
+        <div class="loader-container col-span-3 md:col-span-5 lg:col-span-10">
+          <span class="loader"></span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- CDN for GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../src/NavBarConfig/ToggleNavbar.js"></script>
+  <script type="module" src="./LoadAllCards.js"></script>
+  <script type="module" src="./SelectConfig.js"></script>
+  <script type="module" src="./SearchConfig.js"></script>
+</body>
+
+</html>
