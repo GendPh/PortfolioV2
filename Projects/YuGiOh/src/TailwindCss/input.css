@@ -1,0 +1,177 @@
+/* npx tailwindcss -i ./src/TailwindCss/input.css -o ./src/TailwindCss/output.css --watch */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding: 8rem;
+  }
+
+  section {
+    @apply pb-20 pt-10 border-accent border-b-4 max-w-5xl mx-auto;
+  }
+  a {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply uppercase font-bold;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl text-center;
+  }
+
+  h3 {
+    @apply text-2xl md:text-4xl;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply flex gap-5;
+  }
+
+  #main-navbar {
+    @apply fixed pointer-events-auto lg:static inset-0 left-[35%] bg-secondary lg:bg-background pt-10 lg:pt-0 flex flex-col items-end translate-x-full lg:translate-x-0 transition-all duration-200;
+  }
+
+  #main-navbar ul {
+    @apply flex flex-col lg:flex-row pt-10 lg:pt-0 gap-2 w-full;
+  }
+  #main-navbar ul a {
+    @apply block text-lg w-full py-10 lg:py-5 border-accent px-5 cursor-pointer hover:bg-background lg:hover:bg-accent transition-all duration-200;
+  }
+  #main-navbar ul a.selected {
+    @apply bg-background lg:hover:bg-accent lg:border-b-2;
+  }
+  #button-navbar-close {
+    @apply pe-5;
+  }
+  #main-navbar.is-open {
+    @apply translate-x-0;
+  }
+
+  .btn-change-page {
+    @apply block border-b-4 border-accent px-2 text-xl md:text-3xl relative my-6;
+  }
+  .btn-change-page.end {
+    @apply w-fit ml-auto;
+  }
+  .btn-change-page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    @apply bg-accent transition-all duration-200 -z-10 rounded-t-md;
+  }
+  .btn-change-page:hover::after {
+    width: 100%;
+  }
+
+  .error-message {
+    @apply col-span-2 md:col-span-3 lg:col-span-6 text-justify font-bold text-xl;
+  }
+  .card-container {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-2 min-h-screen lg:min-h-min;
+  }
+
+  .card-container a {
+    @apply relative opacity-0;
+  }
+  .card-container a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card-container a.Banned::before {
+    background-image: url(../Assets/Svg/ban.svg);
+    background-color: white;
+  }
+  .card-container a.Limited::before {
+    background-image: url(../Assets/Svg/limited.svg);
+    background-color: white;
+  }
+  .card-container a.Semi-Limited::before {
+    background-image: url(../Assets/Svg/semiLimited.svg);
+    background-color: white;
+  }
+
+  .loader-container {
+    @apply wrapper items-start justify-center col-span-2 md:col-span-3;
+  }
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: #ff3d00 transparent;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Background color of the scrollbar track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+    @apply bg-accent;
+  }
+
+  #page-buttons a {
+    @apply bg-secondary text-lg py-1 px-4 border-2 border-transparent rounded-md;
+  }
+  #page-buttons a.active {
+    @apply border-accent pointer-events-none;
+  }
+
+  #searchForm:focus-within + .card-container {
+    @apply grid;
+  }
+}
