@@ -47,7 +47,8 @@ async function handleSubmit(event) {
     }
 
     // Load the cards into the container
-    LoadCards(container, card_result);
+    LoadCards(container, card_result, "", "../", "./");
+
   } else {
     // If search term is empty, hide the container
     container.classList.replace("grid", "hidden");

@@ -30,7 +30,7 @@ async function LoadCardInfo() {
 
     // Updating DOM elements with card information
     DOMElem.title.textContent = result.name;
-    DOMElem.card_img.innerHTML = CardElement(result, "../src");
+    DOMElem.card_img.innerHTML = CardElement(result, "../");
     DOMElem.card_type.innerHTML = `<span class="text-accent font-bold">Type:</span> ${result.type}`;
     DOMElem.card_race.innerHTML = `<span class="text-accent font-bold">Race:</span> ${result.race}`;
     DOMElem.card_desc.textContent = result.desc;
@@ -58,7 +58,7 @@ async function LoadCardInfo() {
       // Selecting a subset of related cards (up to 8)
       related_cards = related_cards.slice(0, 8);
       // Loading related cards into DOM
-      LoadCards(DOMElem.card_related, related_cards);
+      LoadCards(DOMElem.card_related, related_cards, "", "../", "./");
     }
   }
 }

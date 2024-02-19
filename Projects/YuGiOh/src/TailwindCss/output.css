@@ -1058,6 +1058,10 @@ h3 {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -1106,10 +1110,6 @@ h3 {
   border-bottom-width: 0px;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
-
 .border-accent {
   --tw-border-opacity: 1;
   border-color: rgb(237 86 44 / var(--tw-border-opacity));
@@ -1145,11 +1145,6 @@ h3 {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .pb-5 {

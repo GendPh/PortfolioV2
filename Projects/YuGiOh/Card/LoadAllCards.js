@@ -12,26 +12,27 @@ async function LoadAllCards() {
   const type_value = (!type.error) ? `type=${type}&` : "";
   const race = GetValueFromURL("race");
   const race_value = (!race.error) ? `race=${race}&` : "";
-  
+
   // Construct URL based on parameters
   const URL = `https://db.ygoprodeck.com/api/v7/cardinfo.php?${archetype_value}${type_value}${race_value}`;
-  
+
   // Get the container for all cards
   const card_container = document.getElementById("all-cards");
   console.log(URL);
-  
+
   // Fetch data from API
   let data = await FetchApi(URL);
-  
+
   // If no error, paginate data and load buttons
   if (!data.error) {
     const paged_data = paginateObject(data.data, 50);
     data = (page_number <= paged_data.length) ? paged_data[page_number - 1] : { error: "No cards available" };
     LoadButtons(paged_data, page_number);
   }
-  
+
   // Load cards into container
-  LoadCards(card_container, data);
+  LoadCards(card_container, data, "", "../", "./");
+
 }
 
 // Function to load pagination buttons
@@ -44,7 +45,7 @@ function LoadButtons(data, page) {
     }
     button_container.appendChild(link);
   }
-  
+
   // Scroll to center the active button
   const targetElement = button_container.querySelector('.active');
   if (targetElement) {
